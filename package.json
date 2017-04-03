@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"envify",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "envify",
+    "description": "api documentation for [envify (v4.0.0)](https://github.com/hughsk/envify#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-envify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-envify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-envify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-envify)",
     "devDependencies": {
-        "envify": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "envify": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-envify",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-envify",
+    "keywords": [
+        "documentation",
+        "envify"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_envify.js",
+    "name": "npmdoc-envify",
+    "nameAlias": "npmdoc_envify",
+    "nameOriginal": "npmdoc-envify",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-envify.git"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
