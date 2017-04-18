@@ -1,9 +1,14 @@
-# api documentation for  [envify (v4.0.0)](https://github.com/hughsk/envify#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-envify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-envify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-envify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-envify)
+# npmdoc-envify
+
+#### api documentation for  [envify (v4.0.0)](https://github.com/hughsk/envify#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-envify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-envify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-envify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-envify)
+
 #### Selectively replace Node-style environment variables with plain strings.
 
-[![NPM](https://nodei.co/npm/envify.png?downloads=true)](https://www.npmjs.com/package/envify)
+[![NPM](https://nodei.co/npm/envify.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/envify)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-envify/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-envify_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-envify/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-envify/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-envify/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-envify/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-envify/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-envify/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Hugh Kennedy",
-        "email": "hughskennedy@gmail.com",
         "url": "http://hughskennedy.com/"
     },
     "bin": {
@@ -56,21 +60,17 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "hughsk",
-            "email": "hughskennedy@gmail.com"
+            "name": "hughsk"
         },
         {
-            "name": "yoshuawuyts",
-            "email": "i@yoshuawuyts.com"
+            "name": "yoshuawuyts"
         },
         {
-            "name": "zertosh",
-            "email": "zertosh@gmail.com"
+            "name": "zertosh"
         }
     ],
     "name": "envify",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/hughsk/envify.git"
@@ -81,16 +81,6 @@
     "version": "4.0.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module envify](#apidoc.module.envify)
-
-
-
-# <a name="apidoc.module.envify"></a>[module envify](#apidoc.module.envify)
 
 
 
