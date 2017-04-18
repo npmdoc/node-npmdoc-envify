@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/hughsk/envify#readme"
-
-    >envify (v4.0.0)</a>
+    <a href="https://github.com/hughsk/envify#readme">envify (v4.0.0)</a>
 </h1>
 <h4>Selectively replace Node-style environment variables with plain strings.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.envify">module envify</a><ol>
 
@@ -144,26 +137,26 @@
 
   function transform(source, envs) {
     var args  = [].concat(envs[0]._ || []).concat(envs[1]._ || [])
-    var purge = args.indexOf(&#x27;purge&#x27;) !== -1
+    var purge = args.indexOf('purge') !== -1
     var replacements = []
 
     function match(node) {
       return (
         node.type === Syntax.MemberExpression
-        &#x26;&#x26; node.object.type === Syntax.MemberExpression
-        &#x26;&#x26; node.object.computed === false
-        &#x26;&#x26; node.object.object.type === Syntax.Identifier
-        &#x26;&#x26; node.object.object.name === &#x27;process&#x27;
-        &#x26;&#x26; node.object.property.type === Syntax.Identifier
-        &#x26;&#x26; node.object.property.name === &#x27;env&#x27;
-        &#x26;&#x26; (node.computed ? node.property.type === Syntax.Literal : node.property.type === Syntax.Identifier)
+        &amp;&amp; node.object.type === Syntax.MemberExpression
+        &amp;&amp; node.object.computed === false
+        &amp;&amp; node.object.object.type === Syntax.Identifier
+        &amp;&amp; node.object.object.name === 'process'
+        &amp;&amp; node.object.property.type === Syntax.Identifier
+        &amp;&amp; node.object.property.name === 'env'
+        &amp;&amp; (node.computed ? node.property.type === Syntax.Literal : node.property.type === Syntax.Identifier)
       )
     }
 
     esprima.parse(source, { tolerant: true }, function(node, meta) {
       if (match(node)) {
         var key = node.property.name || node.property.value
-        for (var i = 0; i &#x3c; envs.length; i++) {
+        for (var i = 0; i &lt; envs.length; i++) {
           var value = envs[i][key]
           if (value !== undefined) {
             replacements.push({ node: node, meta: meta, value: JSON.stringify(value) })
@@ -174,7 +167,7 @@
           replacements.push({ node: node, meta: meta, value: undefined })
         }
       } else if (node.type === Syntax.AssignmentExpression) {
-        for (var i = 0; i &#x3c; replacements.length; ++i) {
+        for (var i = 0; i &lt; replacements.length; ++i) {
           if (replacements[i].node === node.left) {
             replacements.splice(i, 1)
           }
@@ -183,11 +176,11 @@
     })
 
     var result = source
-    if (replacements.length &#x3e; 0) {
+    if (replacements.length &gt; 0) {
       replacements.sort(function (a, b) {
         return b.meta.start.offset - a.meta.start.offset
       })
-      for (var i = 0; i &#x3c; replacements.length; i++) {
+      for (var i = 0; i &lt; replacements.length; i++) {
         var r = replacements[i]
         result = result.slice(0, r.meta.start.offset) + r.value + result.slice(r.meta.end.offset)
       }
@@ -197,13 +190,13 @@
   }
 
   function flush() {
-    var source = buffer.join(&#x27;&#x27;)
+    var source = buffer.join('')
 
     if (processEnvPattern.test(source)) {
       try {
         source = transform(source, [argv, rootEnv])
       } catch(err) {
-        return this.emit(&#x27;error&#x27;, err)
+        return this.emit('error', err)
       }
     }
 
@@ -241,26 +234,26 @@
 
     function transform(source, envs) {
       var args  = [].concat(envs[0]._ || []).concat(envs[1]._ || [])
-      var purge = args.indexOf(&#x27;purge&#x27;) !== -1
+      var purge = args.indexOf('purge') !== -1
       var replacements = []
 
       function match(node) {
         return (
           node.type === Syntax.MemberExpression
-          &#x26;&#x26; node.object.type === Syntax.MemberExpression
-          &#x26;&#x26; node.object.computed === false
-          &#x26;&#x26; node.object.object.type === Syntax.Identifier
-          &#x26;&#x26; node.object.object.name === &#x27;process&#x27;
-          &#x26;&#x26; node.object.property.type === Syntax.Identifier
-          &#x26;&#x26; node.object.property.name === &#x27;env&#x27;
-          &#x26;&#x26; (node.computed ? node.property.type === Syntax.Literal : node.property.type === Syntax.Identifier)
+          &amp;&amp; node.object.type === Syntax.MemberExpression
+          &amp;&amp; node.object.computed === false
+          &amp;&amp; node.object.object.type === Syntax.Identifier
+          &amp;&amp; node.object.object.name === 'process'
+          &amp;&amp; node.object.property.type === Syntax.Identifier
+          &amp;&amp; node.object.property.name === 'env'
+          &amp;&amp; (node.computed ? node.property.type === Syntax.Literal : node.property.type === Syntax.Identifier)
         )
       }
 
       esprima.parse(source, { tolerant: true }, function(node, meta) {
         if (match(node)) {
           var key = node.property.name || node.property.value
-          for (var i = 0; i &#x3c; envs.length; i++) {
+          for (var i = 0; i &lt; envs.length; i++) {
             var value = envs[i][key]
             if (value !== undefined) {
               replacements.push({ node: node, meta: meta, value: JSON.stringify(value) })
@@ -271,7 +264,7 @@
             replacements.push({ node: node, meta: meta, value: undefined })
           }
         } else if (node.type === Syntax.AssignmentExpression) {
-          for (var i = 0; i &#x3c; replacements.length; ++i) {
+          for (var i = 0; i &lt; replacements.length; ++i) {
             if (replacements[i].node === node.left) {
               replacements.splice(i, 1)
             }
@@ -280,11 +273,11 @@
       })
 
       var result = source
-      if (replacements.length &#x3e; 0) {
+      if (replacements.length &gt; 0) {
         replacements.sort(function (a, b) {
           return b.meta.start.offset - a.meta.start.offset
         })
-        for (var i = 0; i &#x3c; replacements.length; i++) {
+        for (var i = 0; i &lt; replacements.length; i++) {
           var r = replacements[i]
           result = result.slice(0, r.meta.start.offset) + r.value + result.slice(r.meta.end.offset)
         }
@@ -294,13 +287,13 @@
     }
 
     function flush() {
-      var source = buffer.join(&#x27;&#x27;)
+      var source = buffer.join('')
 
       if (processEnvPattern.test(source)) {
         try {
           source = transform(source, [argv, rootEnv])
         } catch(err) {
-          return this.emit(&#x27;error&#x27;, err)
+          return this.emit('error', err)
         }
       }
 
@@ -359,26 +352,26 @@
 
     function transform(source, envs) {
       var args  = [].concat(envs[0]._ || []).concat(envs[1]._ || [])
-      var purge = args.indexOf(&#x27;purge&#x27;) !== -1
+      var purge = args.indexOf('purge') !== -1
       var replacements = []
 
       function match(node) {
         return (
           node.type === Syntax.MemberExpression
-          &#x26;&#x26; node.object.type === Syntax.MemberExpression
-          &#x26;&#x26; node.object.computed === false
-          &#x26;&#x26; node.object.object.type === Syntax.Identifier
-          &#x26;&#x26; node.object.object.name === &#x27;process&#x27;
-          &#x26;&#x26; node.object.property.type === Syntax.Identifier
-          &#x26;&#x26; node.object.property.name === &#x27;env&#x27;
-          &#x26;&#x26; (node.computed ? node.property.type === Syntax.Literal : node.property.type === Syntax.Identifier)
+          &amp;&amp; node.object.type === Syntax.MemberExpression
+          &amp;&amp; node.object.computed === false
+          &amp;&amp; node.object.object.type === Syntax.Identifier
+          &amp;&amp; node.object.object.name === 'process'
+          &amp;&amp; node.object.property.type === Syntax.Identifier
+          &amp;&amp; node.object.property.name === 'env'
+          &amp;&amp; (node.computed ? node.property.type === Syntax.Literal : node.property.type === Syntax.Identifier)
         )
       }
 
       esprima.parse(source, { tolerant: true }, function(node, meta) {
         if (match(node)) {
           var key = node.property.name || node.property.value
-          for (var i = 0; i &#x3c; envs.length; i++) {
+          for (var i = 0; i &lt; envs.length; i++) {
             var value = envs[i][key]
             if (value !== undefined) {
               replacements.push({ node: node, meta: meta, value: JSON.stringify(value) })
@@ -389,7 +382,7 @@
             replacements.push({ node: node, meta: meta, value: undefined })
           }
         } else if (node.type === Syntax.AssignmentExpression) {
-          for (var i = 0; i &#x3c; replacements.length; ++i) {
+          for (var i = 0; i &lt; replacements.length; ++i) {
             if (replacements[i].node === node.left) {
               replacements.splice(i, 1)
             }
@@ -398,11 +391,11 @@
       })
 
       var result = source
-      if (replacements.length &#x3e; 0) {
+      if (replacements.length &gt; 0) {
         replacements.sort(function (a, b) {
           return b.meta.start.offset - a.meta.start.offset
         })
-        for (var i = 0; i &#x3c; replacements.length; i++) {
+        for (var i = 0; i &lt; replacements.length; i++) {
           var r = replacements[i]
           result = result.slice(0, r.meta.start.offset) + r.value + result.slice(r.meta.end.offset)
         }
@@ -412,13 +405,13 @@
     }
 
     function flush() {
-      var source = buffer.join(&#x27;&#x27;)
+      var source = buffer.join('')
 
       if (processEnvPattern.test(source)) {
         try {
           source = transform(source, [argv, rootEnv])
         } catch(err) {
-          return this.emit(&#x27;error&#x27;, err)
+          return this.emit('error', err)
         }
       }
 
@@ -457,3 +450,4 @@
     ]
 </div>
 </div>
+</body></html>
