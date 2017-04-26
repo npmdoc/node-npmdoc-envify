@@ -1,6 +1,6 @@
 # npmdoc-envify
 
-#### api documentation for  [envify (v4.0.0)](https://github.com/hughsk/envify#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-envify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-envify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-envify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-envify)
+#### basic api documentation for  [envify (v4.0.0)](https://github.com/hughsk/envify#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-envify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-envify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-envify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-envify)
 
 #### Selectively replace Node-style environment variables with plain strings.
 
